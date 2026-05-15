@@ -3,18 +3,10 @@ class Solution {
         int sum=0,maxsum=Integer.MIN_VALUE;
         for(int i=0;i<nums.length;i++){
             
-            sum=sum+nums[i];
-            if(sum>maxsum){
-                maxsum=sum;
-
-            }
-            if(sum<0){
-                sum=0;
-            }
-
-            
-        }
-        return maxsum;
+            sum=Math.max(nums[i],sum+nums[i]);
+            maxsum=Math.max(maxsum,sum);
         
+    }
+    return maxsum;
     }
 }
